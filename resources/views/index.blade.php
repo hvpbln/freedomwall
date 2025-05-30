@@ -1,0 +1,1 @@
+<a href="{{ route('login') }}" class="btn btn-primary">Admin Login</a>
