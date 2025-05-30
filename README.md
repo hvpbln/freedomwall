@@ -1,7 +1,10 @@
 # setup instructions
 
 1. create the sqlite file for database
-`touch database/database.sqlite`
+```
+touch database/database.sqlite
+```
+or just make a new file 'database.sqlite' inside the database folder in vsc
 
 2. configure .env file
 ```
@@ -9,6 +12,11 @@ DB_CONNECTION=sqlite
 DB_DATABASE=/absolute/path/to/your/project/database/database.sqlite
 ```
 
+3. install
+```
+composer install
+```
+   
 3. create tables
 ```
 php artisan migrate
@@ -53,5 +61,16 @@ php artisan tinker
 ```
 exit
 ```
+11. run
+```
+php artisan key:generate
+php artisan serve
+```
 
-`php artisan serve`
+12. add route in web.php:
+```
+Route::get('/', function () {
+    return view('index'); 
+});
+```
+or kung ano name ng blade na gagamitin mo hahah
