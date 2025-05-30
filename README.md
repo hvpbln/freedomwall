@@ -1,39 +1,46 @@
 # setup instructions
 
-- create the sqlite file for database
+1. create the sqlite file for database
 `touch database/database.sqlite`
 
-- configure .env file
+2. configure .env file
 ```
 DB_CONNECTION=sqlite
 DB_DATABASE=/absolute/path/to/your/project/database/database.sqlite
 ```
 
-- create tables
-`php artisan migrate`
+3. create tables
+```
+php artisan migrate
+```
 
-- install breeze
+4. install breeze
 ```
 composer require laravel/breeze --dev
 php artisan breeze:install
 ```
 
-- enter these during breeze installation:
-`blade`
-`no`
-`1` (PHPUnit)
+5. enter these during breeze installation:
+```
+blade
+no
+1
+```
 
-- install dependencies
+6. install dependencies
 ```
 npm install
 npm run dev
 ```
 
-- open another cmd in the project folder
+7. open another cmd in the project folder
 
-- create admin account
-`php artisan tinker`
-- then
+8. create admin account
+```
+php artisan tinker
+```
+
+9. then
 ```
 \App\Models\User::create([
     'name' => 'Admin',
@@ -42,7 +49,9 @@ npm run dev
 ]);
 ```
 
-- exit tinker
-`exit`
+10. exit tinker
+```
+exit
+```
 
 `php artisan serve`
