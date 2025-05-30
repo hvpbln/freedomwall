@@ -9,16 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->text('content');
+            $table->string('image_path')->nullable();
+            $table->string('anonymous_name')->default('Anonymous User');
             $table->enum('status', ['pending', 'accepted', 'declined'])->default('pending');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
